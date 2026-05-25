@@ -17,15 +17,15 @@ public class RoomController {
     @Autowired
     private RoomService roomService;
 
-    @GetMapping
-    public ResponseEntity<ApiResponse<List<Room>>> getAllRooms() {
-        List<Room> rooms = roomService.getAllRooms();
-        return ResponseEntity.ok(ApiResponse.success("Rooms retrieved successfully", rooms));
-    }
-
     @GetMapping("/my-rooms")
     public ResponseEntity<ApiResponse<List<Room>>> getMyRooms(Principal principal) {
         List<Room> rooms = roomService.getRoomsByOwner(principal.getName());
+        return ResponseEntity.ok(ApiResponse.success("Rooms retrieved successfully", rooms));
+    }
+
+    @GetMapping
+    public ResponseEntity<ApiResponse<List<Room>>> getAllRooms() {
+        List<Room> rooms = roomService.getAllRooms();
         return ResponseEntity.ok(ApiResponse.success("Rooms retrieved successfully", rooms));
     }
 

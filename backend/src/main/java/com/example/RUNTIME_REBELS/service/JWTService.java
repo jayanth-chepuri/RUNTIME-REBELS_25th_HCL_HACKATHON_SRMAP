@@ -17,7 +17,6 @@ import java.util.function.Function;
 @Service
 public class JWTService {
 
-    // A 64-byte (512-bit) secret key encoded in Base64
     private final String secretKey = "c29tZS12ZXJ5LXNlY3VyZS1hbmQtbG9uZy1zZWNyZXQta2V5LXdoaWNoLWlzLWF0LWxlYXN0LTY0LWNoYXJhY3RlcnMtbG9uZy1mb3ItSFM1MTI=";
 
     public JWTService() {
